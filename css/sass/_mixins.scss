@@ -1,0 +1,142 @@
+//
+// Pseudo elements
+//
+@mixin after() {
+	&:after {
+		content: "";
+		display: block;
+		@content;
+	}
+}
+
+@mixin before() {
+	&:before {
+		content: "";
+		display: block;
+		@content;
+	}
+}
+
+//
+// Images
+//
+@mixin image-with-dimentions($image) {
+	background-image: image-url($image);
+	width: image-width($image);
+	height: image-height($image);
+}
+
+//
+// Lists
+//
+@mixin clear-list() {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+//
+// Sprites
+//
+//$sprite: sprite-map("sprites/*.png", $new-position: 0%, $new-spacing: 10px);
+
+@mixin sp($name) {
+	width: image-width(sprite-file($sprite, $name));
+	height: image-height(sprite-file($sprite, $name));
+	background: sprite($sprite, $name) no-repeat;
+}
+
+@mixin after-sp($name) {
+	@include after() {
+		@include sp($name);
+		position: absolute;
+		@content;
+	}
+}
+
+@mixin after-sp-vertical-middle($name) {
+	@include after() {
+		@include sp($name);
+		position: absolute;
+		top: 50%;
+		margin-top: -(image-height(sprite-file($sprite, $name))/2);
+		@content;
+	}
+}
+
+@mixin after-sp-horizontal-center($name) {
+	@include after() {
+		@include sp($name);
+		position: absolute;
+		left: 50%;
+		margin-left: -(image-width(sprite-file($sprite, $name))/2);
+		@content;
+	}
+}
+
+@mixin after-sp-centered($name) {
+	@include after() {
+		@include sp($name);
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -(image-height(sprite-file($sprite, $name))/2);
+		margin-left: -(image-width(sprite-file($sprite, $name))/2);
+		@content;
+	}
+}
+
+@mixin before-sp-horizontal-center($name) {
+	@include before() {
+		@include sp($name);
+		position: absolute;
+		left: 50%;
+		margin-left: -(image-width(sprite-file($sprite, $name))/2);
+		@content;
+	}
+}
+
+//
+// Helpers
+//
+%clearfix {
+	zoom: 1;
+	&:before,
+	&:after {
+		content: " ";
+		display: table;
+	}
+	&:after {
+		clear: both;
+	}
+}
+
+%ib-remove-space {
+	letter-spacing: -0.31em;
+	*letter-spacing: normal;
+	word-spacing: -0.43em;
+	& > div,
+	& > li {
+		display: inline-block;
+		zoom: 1;
+		*display: inline;
+		letter-spacing: normal;
+		word-spacing: normal;
+		vertical-align: top;
+	}
+}
+
+//
+// Responsive
+//
+@mixin respond-to($media) {
+	@if $media == handhelds {
+		@media only screen and (max-width: 320px) { @content; }
+	}
+	@else if $media == medium-screens {
+		@media only screen and (min-width: 321px) and (max-width: 1024px) { @content; }
+	}
+	@else if $media == wide-screens {
+		@media only screen and (min-width: 1024px) { @content; }
+	}
+}
