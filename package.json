@@ -1,0 +1,12 @@
+{
+  "name": "frontend-seed",
+  "version": "0.1",
+  "description": "It's frontend init project",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fliptheweb/frontend-seed.git"
+  },
+  "author": "fliptheweb",
+  "license": "BSD",
+  "gitHead": "3d86270d20ced8e6732ebc9fd8dcb4e1d01d34fb"
+}
