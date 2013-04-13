@@ -10,6 +10,9 @@
   "license": "BSD",
   "gitHead": "3d86270d20ced8e6732ebc9fd8dcb4e1d01d34fb",
   "devDependencies": {
-    "grunt": "~0.4.1"
+    "grunt": "~0.4.1",
+    "grunt-contrib-concat": "~0.2.0",
+    "grunt-contrib-uglify": "~0.2.0",
+    "grunt-contrib-watch": "~0.3.1"
   }
 }
