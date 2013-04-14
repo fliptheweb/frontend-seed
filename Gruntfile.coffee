@@ -43,7 +43,7 @@ module.exports = (grunt) ->
     # Watch for coffee, sass
     watch:
       scripts:
-        files: 'js/*.coffee',
+        files: 'js/*.coffee'
         tasks: 'coffee'
       styles:
         files: 'css/sass/*.scss'
