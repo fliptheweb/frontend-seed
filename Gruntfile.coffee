@@ -40,6 +40,15 @@ module.exports = (grunt) ->
         files:
           'js/main.js': 'js/*.coffee'
 
+    # Watch for coffee, sass
+    watch:
+      scripts:
+        files: 'js/*.coffee',
+        tasks: 'coffee'
+      styles:
+        files: 'css/sass/*.scss'
+        tasks: 'compass'
+
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
 
   grunt.registerTask 'default', ['concat', 'uglify']
