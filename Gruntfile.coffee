@@ -32,6 +32,13 @@ module.exports = (grunt) ->
           environment: 'development'
           outputStyle: 'expanded'
 
+    # Compile coffeeScript
+    coffee:
+      dev:
+        options:
+          sourceMap: true
+        files:
+          'js/main.js': 'js/*.coffee'
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
 
