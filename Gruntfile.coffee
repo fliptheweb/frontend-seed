@@ -26,11 +26,11 @@ module.exports = (grunt) ->
       main:
         options:
           environment: 'production'
-          output_style: 'compressed'
+          outputStyle: 'compressed'
       dev:
         options:
           environment: 'development'
-          output_style: 'expanded'
+          outputStyle: 'expanded'
 
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
