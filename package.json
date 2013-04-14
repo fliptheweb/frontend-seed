@@ -21,6 +21,7 @@
     "grunt-csso": "~0.5.0",
     "grunt-csscss": "~0.2.0",
     "matchdep": "~0.1.2",
-    "coffee-script": "~1.6.2"
+    "coffee-script": "~1.6.2",
+    "grunt-notify": "~0.2.3"
   }
 }
