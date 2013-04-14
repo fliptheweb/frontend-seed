@@ -21,6 +21,18 @@ module.exports = (grunt) ->
           base: '.'
           keepalive: true
 
+    # Compile compass
+    compass:
+      main:
+        options:
+          environment: 'production'
+          output_style: 'compressed'
+      dev:
+        options:
+          environment: 'development'
+          output_style: 'expanded'
+
+
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
 
   grunt.registerTask 'default', ['concat', 'uglify']
