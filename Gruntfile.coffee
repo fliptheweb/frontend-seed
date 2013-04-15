@@ -32,6 +32,20 @@ module.exports = (grunt) ->
           environment: 'development'
           outputStyle: 'expanded'
 
+    # Sass instead of compass, cuz its support sourceMap
+    sass:
+      prod:
+        options:
+          compass: true
+        files:
+          'css/main.css': 'css/sass/main.scss'
+      dev:
+        options:
+          compass: true
+          sourcemap: true
+        files:
+          'css/main.css': 'css/sass/main.scss'
+
     # Compile coffeeScript
     coffee:
       prod:
