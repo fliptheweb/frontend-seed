@@ -2,13 +2,17 @@
   "name": "frontend-seed",
   "version": "0.1.0",
   "description": "It's frontend init project",
+  "author": "fliptheweb",
+
   "repository": {
     "type": "git",
     "url": "git://github.com/fliptheweb/frontend-seed.git"
   },
-  "author": "fliptheweb",
+  "bugs": {
+    "url": "https://github.com/fliptheweb/frontend-seed/issues"
+  },
   "license": "BSD",
-  "gitHead": "3d86270d20ced8e6732ebc9fd8dcb4e1d01d34fb",
+
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-concat": "~0.2.0",
@@ -22,6 +26,7 @@
     "grunt-csscss": "~0.2.0",
     "matchdep": "~0.1.2",
     "coffee-script": "~1.6.2",
-    "grunt-notify": "~0.2.3"
+    "grunt-notify": "~0.2.3",
+    "grunt-mocha": "~0.3.1"
   }
 }

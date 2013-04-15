@@ -49,6 +49,12 @@ module.exports = (grunt) ->
         files: 'css/sass/*.scss'
         tasks: 'compass'
 
+    # Mocha client-side tests
+    mocha:
+      all: 'test/*.html'
+
+
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
 
   grunt.registerTask 'default', ['concat', 'uglify']
+  grunt.registerTask 'test', ['mocha']
