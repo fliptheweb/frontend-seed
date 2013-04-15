@@ -37,12 +37,14 @@ module.exports = (grunt) ->
       prod:
         options:
           compass: true
+          style: 'compressed'
         files:
           'css/main.css': 'css/sass/main.scss'
       dev:
         options:
           compass: true
           sourcemap: true
+          debugInfo: true
         files:
           'css/main.css': 'css/sass/main.scss'
 
@@ -67,10 +69,10 @@ module.exports = (grunt) ->
     watch:
       scripts:
         files: 'js/*.coffee'
-        tasks: 'coffee'
+        tasks: 'coffee:dev'
       styles:
         files: 'css/sass/*.scss'
-        tasks: 'compass'
+        tasks: 'sass:dev'
 
     # Mocha client-side tests
     mocha:
