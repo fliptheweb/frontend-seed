@@ -23,7 +23,7 @@ module.exports = (grunt) ->
 
     # Compile compass
     compass:
-      main:
+      prod:
         options:
           environment: 'production'
           outputStyle: 'compressed'
@@ -34,11 +34,20 @@ module.exports = (grunt) ->
 
     # Compile coffeeScript
     coffee:
+      prod:
+        options:
+          join: true
+        files:
+          'js/main.js': 'js/*.coffee'
       dev:
         options:
           sourceMap: true
+          join: true
         files:
           'js/main.js': 'js/*.coffee'
+      test:
+        files:
+          'test/test.*.js':'test/test.*.coffee'
 
     # Watch for coffee, sass
     watch:
@@ -53,8 +62,18 @@ module.exports = (grunt) ->
     mocha:
       all: 'test/*.html'
 
+    # Simple mocha
+    simplemocha:
+      test:
+        src: 'test/test.*.js'
+        options:
+          reporter: 'spec'
+          slow: 200
+          timeout: 1000
+
+
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
 
   grunt.registerTask 'default', ['concat', 'uglify']
-  grunt.registerTask 'test', ['mocha']
+  grunt.registerTask 'test', ['coffee:test', 'simplemocha:test']
