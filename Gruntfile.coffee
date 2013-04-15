@@ -88,7 +88,6 @@ module.exports = (grunt) ->
           timeout: 1000
 
 
-
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
 
   grunt.registerTask 'default', ['concat', 'uglify']
