@@ -2,7 +2,7 @@ module.exports = (grunt) ->
   grunt.initConfig
     # Concatinate js
     concat:
-      main:
+      prod:
         src: [
           'js/libs/jquery.js'
           'js/mylibs/**/*.js'
@@ -11,7 +11,7 @@ module.exports = (grunt) ->
 
     # Minimalize js
     uglify:
-      main:
+      prod:
         files:
           'build/scripts.min.js': '<%= concat.main.dest %>'
 
