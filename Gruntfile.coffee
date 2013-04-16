@@ -69,12 +69,12 @@ module.exports = (grunt) ->
 
     # Watch for coffee, sass
     watch:
-      scripts:
-        files: 'js/*.coffee'
-        tasks: 'coffee:dev'
-      styles:
-        files: 'css/sass/*.scss'
-        tasks: 'sass:dev'
+      dev:
+        files: ['<%= coffee.dev.files %>', 'src/sass/*.scss']
+        tasks: 'buildDev'
+      test:
+        files: ['<%= coffee.test.files %>']
+        task: 'runTest'
 
     # Mocha client-side tests
     mocha:
@@ -92,5 +92,8 @@ module.exports = (grunt) ->
 
   require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks)
 
-  grunt.registerTask 'default', ['concat', 'uglify']
-  grunt.registerTask 'test', ['coffee:test', 'simplemocha:test']
+  grunt.registerTask 'default',   ['concat', 'uglify']
+  grunt.registerTask 'buildDev',  ['compass:dev', 'coffee:dev']
+
+  grunt.registerTask 'buildTest', ['coffee:test']
+  grunt.registerTask 'runTest',   ['buildTest', 'simplemocha:test']
