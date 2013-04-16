@@ -41,14 +41,14 @@ module.exports = (grunt) ->
           compass: true
           style: 'compressed'
         files:
-          'css/main.css': 'css/sass/main.scss'
+          'public/css/main.css': 'src/sass/main.scss'
       dev:
         options:
           compass: true
           sourcemap: true
           debugInfo: true
         files:
-          'css/main.css': 'css/sass/main.scss'
+          'public/css/main.css': 'src/sass/main.scss'
 
     # Compile coffeeScript
     coffee:
