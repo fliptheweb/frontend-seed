@@ -56,13 +56,13 @@ module.exports = (grunt) ->
         options:
           join: true
         files:
-          'js/main.js': 'js/*.coffee'
+          'public/js/main.js': 'src/coffee/*.coffee'
       dev:
         options:
           sourceMap: true
           join: true
         files:
-          'js/main.js': 'js/*.coffee'
+          'public/js/main.js': 'src/coffee/*.coffee'
       test:
         files:
           'test/test.*.js':'test/test.*.coffee'
