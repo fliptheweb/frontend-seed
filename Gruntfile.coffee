@@ -23,7 +23,7 @@ module.exports = (grunt) ->
           base: '.'
           keepalive: true
 
-    # Compile compass
+    # Compile compass (configure in config.rb)
     compass:
       prod:
         options:
