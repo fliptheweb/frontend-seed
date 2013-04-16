@@ -4,16 +4,15 @@ module.exports = (grunt) ->
     concat:
       prod:
         src: [
-          'js/libs/jquery.js'
-          'js/mylibs/**/*.js'
+          'public/js/*.js'
         ]
-        dest: 'build/scripts.js'
+        dest: 'public/js/main.js'
 
     # Minimalize js
     uglify:
       prod:
         files:
-          'build/scripts.min.js': '<%= concat.main.dest %>'
+          'public/js/main.min.js': '<%= concat.main.dest %>'
 
     # Run simple server for static
     connect:
