@@ -1,5 +1,6 @@
 module.exports = (grunt) ->
   grunt.initConfig
+    # Concatinate js
     concat:
       main:
         src: [
@@ -8,6 +9,7 @@ module.exports = (grunt) ->
         ]
         dest: 'build/scripts.js'
 
+    # Minimalize js
     uglify:
       main:
         files:
